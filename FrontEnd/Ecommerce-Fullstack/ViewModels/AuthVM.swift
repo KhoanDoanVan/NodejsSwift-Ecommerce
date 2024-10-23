@@ -18,8 +18,11 @@ class AuthVM {
     var emailValidStateLogin: ValidateState = .empty
     var emailValidStateRegister: ValidateState = .empty
     var emailValidStateForget: ValidateState = .empty
-    
     var nameValidStateRegister: ValidateState = .empty
+    
+    var alertTitle = ""
+    var alertMessage = ""
+    var showAlert: Bool = false
     
     var emailLogin = "" {
         didSet {
@@ -74,4 +77,44 @@ class AuthVM {
     func updateValidForget() {
         isValidForget = emailValidStateForget == .valid
     }
+    
+    /// Register Function
+    func register(name: String, email: String, password: String) async throws -> ValidateResponse {
+        guard let url = URLComponents(string: "\(baseURL)/register")?.url else {
+            return ValidateResponse(message: "URL Incorrect")
+        }
+        
+        let registerRequest = RegisterRequest(email: email, password: password, name: name)
+        
+        let requestBody: Data
+        
+        do {
+            requestBody = try JSONEncoder().encode(registerRequest)
+        } catch {
+            throw NetworkError.invalidData
+        }
+        
+        do {
+            let (authResponse, httpResponse) = try await HTTPClient.shared.httpRequest(url: url, method: .POST, body: requestBody) as (ValidateResponse, HTTPURLResponse)
+            
+            if (200...299).contains(httpResponse.statusCode) {
+                alertTitle = "Success"
+                alertMessage = authResponse.message ?? ""
+                showAlert = true
+                return ValidateResponse(message: authResponse.message)
+            } else {
+                alertTitle = "Error"
+                alertMessage = authResponse.message ?? ""
+                showAlert = true
+                throw NetworkError.invalidResponse
+            }
+        } catch {
+            alertTitle = "Error"
+            alertMessage = "Network Request Failed"
+            showAlert = true
+            throw NetworkError.invalidResponse
+        }
+    }
 }
+
+let baseURL: String = "http://localhost:4000"

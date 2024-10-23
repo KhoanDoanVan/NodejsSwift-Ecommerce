@@ -19,6 +19,7 @@
 		467375342CC289E700FFF53F /* AuthVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467375332CC289E700FFF53F /* AuthVM.swift */; };
 		467375362CC291E100FFF53F /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467375352CC291E100FFF53F /* ForgotPassword.swift */; };
 		46AE74072CC91CC700EA5834 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE74062CC91CC700EA5834 /* HTTPClient.swift */; };
+		46AE740A2CC927CA00EA5834 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE74092CC927CA00EA5834 /* User.swift */; };
 		46F2CE542CC3CBCA00A584CD /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F2CE532CC3CBCA00A584CD /* Register.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		467375332CC289E700FFF53F /* AuthVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVM.swift; sourceTree = "<group>"; };
 		467375352CC291E100FFF53F /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		46AE74062CC91CC700EA5834 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		46AE74092CC927CA00EA5834 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		46F2CE532CC3CBCA00A584CD /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,7 @@
 		467375162CC2808500FFF53F /* Ecommerce-Fullstack */ = {
 			isa = PBXGroup;
 			children = (
+				46AE74082CC927BF00EA5834 /* Models */,
 				467375322CC2899700FFF53F /* ViewModels */,
 				467375282CC2821500FFF53F /* Services */,
 				467375252CC280B200FFF53F /* Subviews */,
@@ -124,6 +127,14 @@
 				467375332CC289E700FFF53F /* AuthVM.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		46AE74082CC927BF00EA5834 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				46AE74092CC927CA00EA5834 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +215,7 @@
 				467375312CC2894900FFF53F /* MainTabView.swift in Sources */,
 				46AE74072CC91CC700EA5834 /* HTTPClient.swift in Sources */,
 				467375182CC2808500FFF53F /* Ecommerce_FullstackApp.swift in Sources */,
+				46AE740A2CC927CA00EA5834 /* User.swift in Sources */,
 				4673752A2CC2826800FFF53F /* Utils.swift in Sources */,
 				467375342CC289E700FFF53F /* AuthVM.swift in Sources */,
 				467375362CC291E100FFF53F /* ForgotPassword.swift in Sources */,

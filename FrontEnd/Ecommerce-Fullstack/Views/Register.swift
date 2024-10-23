@@ -24,7 +24,13 @@ struct Register: View {
             FormField(value: $vmBindable.passwordRegister, icon: "lock.circle", placeholder: "Password", isSecure: true, validateState: vmBindable.passwordValidStateRegister)
             
             Button {
-                
+                Task {
+                    try await vmBindable.register(
+                        name: vm.nameRegister,
+                        email: vm.emailRegister,
+                        password: vm.passwordRegister
+                    )
+                }
             } label: {
                 Text("Register")
                     .buttonTextModifier()
@@ -35,6 +41,13 @@ struct Register: View {
         .navigationTitle("Register")
         .backButtonModifier(dismiss: dismiss)
         .padding(.horizontal, 32)
+        .alert(vm.alertTitle, isPresented: $vmBindable.showAlert) {
+            Button("OK", role: .cancel) {
+                
+            }
+        } message: {
+            Text(vmBindable.alertMessage)
+        }
         
         Spacer()
         
