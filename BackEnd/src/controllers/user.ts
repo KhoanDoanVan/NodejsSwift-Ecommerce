@@ -21,6 +21,8 @@ export const register = async(req: Request, res: Response): Promise<void> => {
             res.status(400).json({
                 message: "Email Already Exists"
             })
+
+            return
         }
 
         const existingName = await User.findOne({name})
@@ -32,7 +34,7 @@ export const register = async(req: Request, res: Response): Promise<void> => {
             return
         }
 
-        if (validateLength(name, 4, 25)) {
+        if (validateLength(name, 2, 25)) {
             res.status(400).json({
                 message: "Name must be larger 4 characters and lesser 25 characters"
             })

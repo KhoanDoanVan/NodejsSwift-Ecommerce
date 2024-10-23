@@ -6,5 +6,5 @@ export const validateEmail = (email: String): boolean => {
 }
 
 export const validateLength = (text: String, min: number, max: number): boolean => {
-    return !(text.length > max || text.length < min)
+    return (text.length > min && text.length > max)
 }

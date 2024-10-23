@@ -18,6 +18,7 @@
 		467375312CC2894900FFF53F /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467375302CC2894900FFF53F /* MainTabView.swift */; };
 		467375342CC289E700FFF53F /* AuthVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467375332CC289E700FFF53F /* AuthVM.swift */; };
 		467375362CC291E100FFF53F /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467375352CC291E100FFF53F /* ForgotPassword.swift */; };
+		46AE74072CC91CC700EA5834 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE74062CC91CC700EA5834 /* HTTPClient.swift */; };
 		46F2CE542CC3CBCA00A584CD /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F2CE532CC3CBCA00A584CD /* Register.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		467375302CC2894900FFF53F /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		467375332CC289E700FFF53F /* AuthVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVM.swift; sourceTree = "<group>"; };
 		467375352CC291E100FFF53F /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		46AE74062CC91CC700EA5834 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		46F2CE532CC3CBCA00A584CD /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				467375292CC2826800FFF53F /* Utils.swift */,
+				46AE74062CC91CC700EA5834 /* HTTPClient.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				4673752F2CC2891A00FFF53F /* Login.swift in Sources */,
 				46F2CE542CC3CBCA00A584CD /* Register.swift in Sources */,
 				467375312CC2894900FFF53F /* MainTabView.swift in Sources */,
+				46AE74072CC91CC700EA5834 /* HTTPClient.swift in Sources */,
 				467375182CC2808500FFF53F /* Ecommerce_FullstackApp.swift in Sources */,
 				4673752A2CC2826800FFF53F /* Utils.swift in Sources */,
 				467375342CC289E700FFF53F /* AuthVM.swift in Sources */,
