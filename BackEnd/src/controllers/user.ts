@@ -1,7 +1,9 @@
 import { Request, Response } from "express"
-import { validateEmail, validateLength } from "../utils/validation"
+import { generateCode, validateEmail, validateLength } from "../utils/validation"
 import bcrypt from 'bcrypt'
+import Code from '../models/code'
 import User from "../models/user"
+import { sendVerificationEmail } from "../utils/mailer"
 
 // Register
 export const register = async(req: Request, res: Response): Promise<void> => {
@@ -50,6 +52,16 @@ export const register = async(req: Request, res: Response): Promise<void> => {
         })
 
         await user.save()
+
+        await Code.deleteMany({user: user._id})
+
+        const code = generateCode(6)
+        const newCode = await new Code({
+            code: code,
+            user: user._id
+        })
+
+        sendVerificationEmail(user.email, user.name, code)
 
         res.status(200).json({
             message: "Register Successfully. Please activate Email to Proceed."
